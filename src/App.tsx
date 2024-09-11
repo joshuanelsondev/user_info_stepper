@@ -1,17 +1,17 @@
+// App
 import { useState } from 'react'
+import UserModal from './components/UserModal'
 import './App.scss'
 
 function App() {
   const [modalVisibility, setModalVisibility] = useState<boolean>(false)
+
   return (
     <main>
       {!modalVisibility ? (
         <button onClick={() => setModalVisibility(true)}>Add User</button>
       ) : (
-        <div>
-          <p>Modal</p>
-          <button onClick={() => setModalVisibility(false)}>Close</button>
-        </div>
+        <UserModal setModalVisibility={setModalVisibility} />
       )}
     </main>
   )
