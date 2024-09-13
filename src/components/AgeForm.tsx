@@ -1,13 +1,22 @@
 // AgeForm
 
-export default function AgeForm() {
-  return (
-    <form>
-      <label htmlFor="age">What is your age?</label>
-      <input type="age" />
+interface AgeFormProps {
+  formView: string
+  setFormView: (formView: string) => void
+}
 
-      <button>Back</button>
-      <button>Next</button>
-    </form>
+export default function AgeForm({ formView, setFormView }: AgeFormProps) {
+  return (
+    <>
+      {formView == 'age' && (
+        <form>
+          <label htmlFor="age">What is your age?</label>
+          <input type="age" />
+
+          <button onClick={() => setFormView('name')}>Back</button>
+          <button onClick={() => setFormView('review')}>Next</button>
+        </form>
+      )}
+    </>
   )
 }

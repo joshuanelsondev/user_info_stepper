@@ -1,11 +1,23 @@
 // ReviewUserInfo
 
-export default function ReviewUserInfo() {
+interface ReviewUserInfoProps {
+  formView: string
+  setFormView: (formView: string) => void
+}
+
+export default function ReviewUserInfo({
+  formView,
+  setFormView,
+}: ReviewUserInfoProps) {
   return (
-    <div>
-      <p>Review User Info</p>
-      <button>Back</button>
-      <button>Finish</button>
-    </div>
+    <>
+      {formView == 'review' && (
+        <div>
+          <p>Review User Info</p>
+          <button onClick={() => setFormView('age')}>Back</button>
+          <button>Finish</button>
+        </div>
+      )}
+    </>
   )
 }
