@@ -9,12 +9,16 @@ interface UserModalProp {
 }
 
 export default function UserModal({ setModalVisibility }: UserModalProp) {
-  const [formView, setFormView] = useState<string>('age')
+  const [formView, setFormView] = useState<string>('name')
   return (
     <div id="user-modal">
-      <NameForm formView={formView} setFormView={setFormView} />
-      <AgeForm formView={formView} setFormView={setFormView} />
-      <ReviewUserInfo formView={formView} setFormView={setFormView} />
+      {formView === 'name' ? (
+        <NameForm setFormView={setFormView} />
+      ) : formView === 'age' ? (
+        <AgeForm setFormView={setFormView} />
+      ) : (
+        <ReviewUserInfo setFormView={setFormView} />
+      )}
       <button onClick={() => setModalVisibility(false)}>Close</button>
     </div>
   )

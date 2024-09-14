@@ -1,25 +1,20 @@
 // NameForm
 
 interface NameFormProps {
-  formView: string
   setFormView: (formView: string) => void
 }
 
-export default function NameForm({ formView, setFormView }: NameFormProps) {
+export default function NameForm({ setFormView }: NameFormProps) {
   return (
-    <>
-      {formView == 'name' && (
-        <form>
-          <label htmlFor="first_name">What is your first name?</label>
-          <input type="text" id="first_name" />
+    <form>
+      <label htmlFor="first_name">What is your first name?</label>
+      <input type="text" id="first_name" />
 
-          <label htmlFor="last_name">What is your last name?</label>
-          <input type="text" id="last_name" />
+      <label htmlFor="last_name">What is your last name?</label>
+      <input type="text" id="last_name" />
 
-          <button>Back</button>
-          <button onClick={() => setFormView('age')}>Next</button>
-        </form>
-      )}
-    </>
+      <button disabled>Back</button>
+      <button onClick={() => setFormView('age')}>Next</button>
+    </form>
   )
 }
