@@ -1,7 +1,10 @@
 // NameForm
 
+import { User } from '../types/User'
+
 interface NameFormProps {
   setFormView: (formView: string) => void
+  userInfo: User
 }
 
 export default function NameForm({ setFormView }: NameFormProps) {

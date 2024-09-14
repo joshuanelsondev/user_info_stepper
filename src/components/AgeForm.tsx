@@ -1,7 +1,10 @@
 // AgeForm
 
+import { User } from '../types/User'
+
 interface AgeFormProps {
   setFormView: (formView: string) => void
+  userInfo: User
 }
 
 export default function AgeForm({ setFormView }: AgeFormProps) {
