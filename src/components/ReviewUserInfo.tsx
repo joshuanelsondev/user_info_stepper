@@ -1,10 +1,7 @@
 // ReviewUserInfo
-
-import { User } from '../types/User'
-
 interface ReviewUserInfoProps {
   setFormView: (formView: string) => void
-  userInfo: User
+  userInfo: { first_name: string; last_name: string; age: number }
 }
 
 export default function ReviewUserInfo({ setFormView }: ReviewUserInfoProps) {

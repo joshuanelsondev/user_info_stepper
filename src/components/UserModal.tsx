@@ -39,11 +39,7 @@ export default function UserModal({ setModalVisibility }: UserModalProp) {
           updateUserInfo={updateUserInfo}
         />
       ) : (
-        <ReviewUserInfo
-          setFormView={setFormView}
-          userInfo={userInfo}
-          updateUserInfo={updateUserInfo}
-        />
+        <ReviewUserInfo setFormView={setFormView} userInfo={userInfo} />
       )}
       <button onClick={() => setModalVisibility(false)}>Close</button>
     </div>
