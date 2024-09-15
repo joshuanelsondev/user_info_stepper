@@ -1,5 +1,5 @@
 // UserModal
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AgeForm from './AgeForm'
 import NameForm from './NameForm'
 import ReviewUserInfo from './ReviewUserInfo'
@@ -16,6 +16,13 @@ export default function UserModal({ setModalVisibility }: UserModalProp) {
     last_name: '',
     age: 0,
   })
+
+  useEffect(() => {
+    const storedUserInfo = localStorage.getItem('userInfo')
+    if (storedUserInfo) {
+      setUserInfo(JSON.parse(storedUserInfo))
+    }
+  }, [])
 
   const updateUserInfo = (field: keyof User, value: string | number) => {
     setUserInfo({
