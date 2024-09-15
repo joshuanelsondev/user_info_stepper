@@ -31,8 +31,19 @@ export default function UserModal({ setModalVisibility }: UserModalProp) {
     })
   }
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    localStorage.setItem('userInfo', JSON.stringify(userInfo))
+    showResults()
+  }
+
+  const showResults = () => {
+    console.log(userInfo)
+  }
+
   return (
-    <div id="user-modal">
+    <form id="user-form" onSubmit={(e) => handleSubmit(e)}>
       {formView === 'name' ? (
         <NameForm
           setFormView={setFormView}
@@ -49,6 +60,6 @@ export default function UserModal({ setModalVisibility }: UserModalProp) {
         <ReviewUserInfo setFormView={setFormView} userInfo={userInfo} />
       )}
       <button onClick={() => setModalVisibility(false)}>Close</button>
-    </div>
+    </form>
   )
 }

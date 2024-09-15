@@ -8,7 +8,7 @@ interface NameFormProps {
 
 export default function NameForm({ setFormView }: NameFormProps) {
   return (
-    <form>
+    <div>
       <label htmlFor="first_name">What is your first name?</label>
       <input type="text" id="first_name" />
 
@@ -17,6 +17,6 @@ export default function NameForm({ setFormView }: NameFormProps) {
 
       <button disabled>Back</button>
       <button onClick={() => setFormView('age')}>Next</button>
-    </form>
+    </div>
   )
 }

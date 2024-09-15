@@ -7,12 +7,12 @@ interface AgeFormProps {
 
 export default function AgeForm({ setFormView }: AgeFormProps) {
   return (
-    <form>
+    <div>
       <label htmlFor="age">What is your age?</label>
       <input type="age" />
 
       <button onClick={() => setFormView('name')}>Back</button>
       <button onClick={() => setFormView('review')}>Next</button>
-    </form>
+    </div>
   )
 }
