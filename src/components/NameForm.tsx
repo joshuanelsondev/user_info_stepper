@@ -26,7 +26,12 @@ export default function NameForm({
       />
 
       <label htmlFor="last_name">What is your last name?</label>
-      <input type="text" id="last_name" />
+      <input
+        type="text"
+        id="last_name"
+        value={userInfo.last_name}
+        onChange={handleChange}
+      />
 
       <button disabled>Back</button>
       <button type="button" onClick={() => setFormView('age')}>
